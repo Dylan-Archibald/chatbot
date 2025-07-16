@@ -1,4 +1,4 @@
-1import ollama
+import ollama
 
 # Initial system prompt with default personality
 conversation_history = [
