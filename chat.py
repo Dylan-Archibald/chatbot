@@ -1,5 +1,5 @@
-11111111111111111111111111111111111111111111111111111111111111111111111111from ollama import chat
-1111111
+from ollama import chat
+
 # Start the chat history
 messages = [
     {"role": "system", "content": "You are a helpful assistant."},
