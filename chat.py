@@ -1,4 +1,4 @@
-11111from ollama import chat
+from ollama import chat
 
 # Start the chat history
 messages = [
