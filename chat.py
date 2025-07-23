@@ -1,16 +1,13 @@
 from ollama import chat
 
-# Start the chat history
-messages = [
-    {"role": "system", "content": "You are a helpful assistant."},
-    {"role": "user", "content": "Hello! What's your name?"}
-]
+def run_chat(model, messages):
+    response = chat(model=model, messages=messages)
+    return response.message.content
 
-# Run chat with the model
-response = chat(model="phi3", messages=messages)
-
-# Show the response
-print("Assistant:", response.message.content)
-
-import os
-print(os.getcwd())
+def get_personality(style="helpful"):
+    personalities = {
+        "helpful": "You are a helpful assistant.",
+        "funny": "You are a witty assistant who likes to joke around.",
+        "serious": "You are a no-nonsense, concise assistant."
+    }
+    return personalities.get(style, personalities["helpful"])
