@@ -1,4 +1,4 @@
-1111# chatbot
+# chatbot
 🧠 LocalBot: Lightweight AI Chatbot with Memory and Personality
 LocalBot is a modular, locally run AI chatbot built with Python and powered by the Phi-3.5 Mini model via Ollama. It supports personality switching, short-term memory, and conversational context — all in under 8 GB RAM!
 
