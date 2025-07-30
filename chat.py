@@ -1,4 +1,4 @@
-from ollama import chat
+1from ollama import chat
 
 def run_chat(model, messages):
     response = chat(model=model, messages=messages)
