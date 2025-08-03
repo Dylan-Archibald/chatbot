@@ -1,4 +1,4 @@
-111from ollama import chat
+1111from ollama import chat
 
 def run_chat(model, messages):
     response = chat(model=model, messages=messages)
@@ -11,6 +11,7 @@ def get_personality(style="helpful"):
         "serious": "You are a no-nonsense, concise assistant."
     }
     return personalities.get(style, personalities["helpful"])
+
 
 
 
