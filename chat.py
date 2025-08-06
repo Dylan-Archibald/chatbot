@@ -1,4 +1,4 @@
-from ollama import chat
+1from ollama import chat
 
 def run_chat(model, style, messages):
     system_msg = {"role": "system", "content": get_personality(style)}
@@ -21,3 +21,4 @@ def preview_response(prompt, models=["phi3"], styles=["helpful", "funny", "serio
             print(f"👤 Model: {model} | Personality: {style}")
             reply = run_chat(model, style, messages)
             print(f"💬 {reply}\n")
+
