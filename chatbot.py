@@ -1,4 +1,4 @@
-111111111111111111111111111111import ollama
+import ollama
 import json
 import os
 
@@ -89,6 +89,7 @@ def chat_with_model():
 
 if __name__ == "__main__":
     chat_with_model()
+
 
 
 
