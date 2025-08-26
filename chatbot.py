@@ -2,7 +2,6 @@ import ollama
 import json
 import os
 
-# 🎭 Personality presets
 PERSONALITIES = {
     "default": "You are LocalBot, a witty and curious assistant who loves science, jokes, and thoughtful advice. Keep replies concise. Use markdown formatting when listing.",
     "zen": "You are ZenBot, a peaceful assistant who speaks in philosophical, calming tones. Keep responses meditative and serene.",
@@ -10,10 +9,8 @@ PERSONALITIES = {
     "tech": "You are TechBot, a focused AI assistant specializing in Python, coding, and machine troubleshooting. Be precise and practical."
 }
 
-# 📁 Memory file path
 MEMORY_FILE = "chat_history.json"
 
-# 🧠 Load memory or initialize
 def load_history():
     if os.path.exists(MEMORY_FILE):
         try:
@@ -22,25 +19,21 @@ def load_history():
         except json.JSONDecodeError:
             print("⚠️ Corrupt memory file. Starting fresh.")
     return [{"role": "system", "content": PERSONALITIES["default"]}]
-
-# 💾 Save memory
+    
 def save_history(history):
     with open(MEMORY_FILE, "w") as f:
         json.dump(history, f, indent=2)
 
-# 🔄 Switch personality
 def switch_personality(mode, history):
     personality = PERSONALITIES.get(mode.lower(), PERSONALITIES["default"])
     history.clear()
     history.append({"role": "system", "content": personality})
     print(f"\n🎭 Personality switched to: {mode.title()}\n")
 
-# ✂️ Trim memory for performance
 def trim_history(history, max_messages=20):
     if len(history) > max_messages:
         history[:] = [history[0]] + history[-max_messages:]
 
-# 🧑‍💻 Chat loop
 def chat_with_model():
     history = load_history()
     print("🤖 LocalBot is ready! Type 'exit' to quit.")
@@ -89,6 +82,7 @@ def chat_with_model():
 
 if __name__ == "__main__":
     chat_with_model()
+
 
 
 
